@@ -1,7 +1,6 @@
 package com.example.nppump;
 
 import android.app.AlertDialog;
-import android.media.Image;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,9 +9,17 @@ import com.example.nppump.base.BaseActivity;
 import com.example.nppump.databinding.ActivityMainBinding;
 import com.example.nppump.vm.MainVM;
 
+import android_serialport_api.SerialPort;
+import android_serialport_api.SerialPortFinder;
+
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainVM> {
+    //弹窗Tip
     private AlertDialog TipDialog;
     private AlertDialog.Builder TipDialogBuild;
+
+    //串口配置
+    private SerialPortFinder mSerialPortFinder;
+
 
     @Override
     protected int layoutId() {
@@ -22,13 +29,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainVM> {
     @Override
     protected void initData() {
         click();
-
-//        AndPermission.with(this).runtime().permission(Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE).onDenied(permissions -> {
-//            ToastUtils.showLong("权限获取失败,将退出应用");
-//            finish();
-//        }).onGranted(permissions -> {
-//
-//        }).start();
     }
 
     public void showDialogTip(int tipimg, String tiptv) {
@@ -54,6 +54,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainVM> {
     }
 
 
+//                showDialogTip(R.mipmap.sucess, "参数下发成功！");
+//                showDialogTip(R.mipmap.warn,"参数下发失败！");
+//                showDialogTip(R.mipmap.warn,"参数下发中，请稍后...");
     /**
      * 点击事件
      */
@@ -61,9 +64,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainVM> {
         mBinding.xfBtn.setOnClickListener(new OnSingleClickListener() {
             @Override
             public void onSingleClick(View view) {
-                showDialogTip(R.mipmap.sucess, "参数下发成功！");
-//                showDialogTip(R.mipmap.warn,"参数下发失败！");
-//                showDialogTip(R.mipmap.warn,"参数下发中，请稍后...");
 
             }
         });
