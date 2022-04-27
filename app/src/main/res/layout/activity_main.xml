@@ -51,11 +51,23 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="clip_vertical"
                 android:layout_marginStart="@dimen/DP_20"
+                android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/npsetting"
                 android:textColor="@color/black"
                 android:textSize="@dimen/SP_20"
                 android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/read_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/DP_50"
+                android:background="@drawable/button_circle"
+                android:text="读取参数"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -98,8 +110,10 @@
                     android:layout_marginTop="@dimen/DP_15"
                     android:layout_weight="1"
                     android:background="@null"
+                    android:cursorVisible="false"
+                    android:focusable="false"
                     android:hint="@string/pleaseinput"
-                    android:inputType="text"
+                    android:inputType="none"
                     android:lines="1"
                     android:maxLines="1"
                     android:textColor="@color/black"
@@ -339,7 +353,7 @@
                     android:src="@mipmap/qtllcgq" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/DP_10"
                     android:layout_weight="1"
@@ -347,35 +361,59 @@
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/permission_sp_16" />
 
-                <Switch
-                    android:id="@+id/qtllcgq_swh"
-                    android:layout_width="wrap_content"
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/cgq_rg"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/DP_10"
-                    android:thumb="@drawable/thumb_selctor"
-                    android:track="@drawable/track_selctor"
-                    tools:ignore="RtlHardcoded,UseSwitchCompatOrMaterialXml" />
+                    android:layout_marginTop="@dimen/DP_15"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/yescgq_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="无气体流量计"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/nocgq_rb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="有气体流量计"
+                        android:textColor="@color/black" />
+
+
+                </RadioGroup>
 
             </LinearLayout>
+
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
-
-
-        </LinearLayout>
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/xf_btn"
-            android:layout_gravity="bottom"
-            android:layout_margin="@dimen/DP_15"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:textColor="@color/white"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/DP_15"
+            android:background="@drawable/button_circle"
             android:text="下发参数"
-            android:textSize="@dimen/DP_15"
-            android:background="@drawable/button_circle"/>
+            android:textColor="@color/white"
+            android:textSize="@dimen/DP_15" />
     </LinearLayout>
 </layout>

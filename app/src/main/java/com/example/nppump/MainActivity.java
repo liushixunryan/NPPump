@@ -9,16 +9,10 @@ import com.example.nppump.base.BaseActivity;
 import com.example.nppump.databinding.ActivityMainBinding;
 import com.example.nppump.vm.MainVM;
 
-import android_serialport_api.SerialPort;
-import android_serialport_api.SerialPortFinder;
-
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainVM> {
     //弹窗Tip
     private AlertDialog TipDialog;
     private AlertDialog.Builder TipDialogBuild;
-
-    //串口配置
-    private SerialPortFinder mSerialPortFinder;
 
 
     @Override

@@ -5,9 +5,9 @@
     <string name="gjbb">固件版本</string>
     <string name="pleaseinput">请输入</string>
     <string name="djbh">电机保护</string>
-    <string name="djbh_dw">A</string>
-    <string name="ryxs_dw">uL/P</string>
-    <string name="ryxs">燃油系数</string>
+    <string name="djbh_dw">mA</string>
+    <string name="ryxs_dw">10uL/P</string>
+    <string name="ryxs">油机当量</string>
     <string name="hqxt">回气系统</string>
     <string name="qtllcgq">气体流量传感器</string>
 </resources>
